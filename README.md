@@ -18,8 +18,11 @@
 - Sélection et ordre de priorité des fichiers, avant et pendant le téléchargement.
 - Lecture des vidéos en cours de téléchargement (VLC, mpv…).
 - File d'attente à trois niveaux de priorité, qui déterminent l'ordre de démarrage et la part de bande passante.
-- Catégories avec dossier dédié, limites de vitesse, planificateur horaire.
-- Partage avec ratio et durée maximum ; création de torrents.
+- Limites de vitesse globales et par téléchargement, planificateur horaire.
+- Catégories avec dossier dédié.
+- Flux RSS de séries : ajout automatique des nouveaux épisodes, avec filtres (RSS, Atom, Jackett, Prowlarr).
+- Liens magnet copiés proposés à l'ajout au retour sur la fenêtre.
+- Partage avec ratio et durée maximum.
 
 **Confidentialité**
 - Liaison stricte à l'interface du VPN, avec arrêt immédiat en cas de coupure et reprise automatique.
@@ -34,14 +37,28 @@
 - Mode jeu : ralentissement ou pause automatique au lancement d'un jeu.
 - Arrêt du PC à la fin des téléchargements.
 - Démarrage avec Windows, association des liens magnet et `.torrent`, notifications.
-- Envoi automatique vers Cloudflare R2 (optionnel).
-- Statistiques, état des trackers, export et import de la liste de téléchargements.
+- Envoi automatique sur storage.to une fois terminé, avec lien de partage (optionnel, sans compte).
+- Graphique du débit en direct (global et par téléchargement), statistiques, état des trackers.
+- Export et import de la liste de téléchargements.
 
 **Moteur**
 - Basé sur [librqbit](https://github.com/ikatson/rqbit) (Rust), étendu pour Pocket Torrent.
 - DHT, PEX, trackers HTTP/UDP, µTP, sources web (BEP 19), extension Fast (BEP 6), partage partiel (BEP 21),
   sélection des pièces les plus rares, réciprocité d'envoi.
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
+
+## Nouveautés de la 0.2.1
+
+| Ajouté | Retiré |
+| --- | --- |
+| Envoi en ligne sur storage.to | Envoi sur Cloudflare R2 |
+| Flux RSS de séries | Création de torrents (« Partager en torrent ») |
+| Limite de vitesse par torrent | |
+| Proposition des liens magnet copiés | |
+| Graphique du débit en direct | |
+
+Retirés dans la 0.2.0 : dossiers surveillés, programmes externes (commandes à l'ajout ou à la fin
+d'un téléchargement), import des réglages de la version web.
 
 ## Installation
 
@@ -76,7 +93,8 @@ Pocket Torrent n'établit que les connexions suivantes :
 - GitHub, pour la recherche de mises à jour (désactivable) ;
 - routeur, pour l'ouverture du port (UPnP, NAT-PMP ; désactivée avec le VPN et en mode renforcé) ;
 - serveur VPN, pour la redirection de port (si activée) ;
-- Cloudflare R2 (si configuré).
+- storage.to, pour les téléchargements marqués « Envoyer sur storage.to » ;
+- serveurs des flux RSS configurés (par le même chemin réseau que les téléchargements).
 
 ## Désinstallation
 
