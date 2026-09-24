@@ -47,6 +47,11 @@
   sélection des pièces les plus rares, réciprocité d'envoi.
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
 
+## Correctifs de la 0.2.2
+
+- Plantage de l'application lors de la lecture du presse-papiers (retour sur la fenêtre).
+- Fenêtres de console qui s'ouvraient pendant l'analyse Microsoft Defender et l'arrêt programmé du PC.
+
 ## Nouveautés de la 0.2.1
 
 | Ajouté | Retiré |
