@@ -39,7 +39,8 @@
 - Mode jeu : ralentissement ou pause automatique au lancement d'un jeu.
 - Arrêt du PC à la fin des téléchargements.
 - Démarrage avec Windows, association des liens magnet et `.torrent`, notifications.
-- Envoi automatique sur storage.to une fois terminé, avec lien de partage (optionnel, sans compte).
+- Envoi sur storage.to avec lien de partage (optionnel, sans compte) : automatique une fois terminé, ou à la
+  demande depuis un téléchargement terminé ; durée de vie et effacement après N téléchargements au choix.
 - Graphique du débit en direct (global et par téléchargement), statistiques, état des trackers.
 - Export et import de la liste de téléchargements.
 
@@ -49,6 +50,12 @@
   sélection des pièces les plus rares, réciprocité d'envoi, fin de partie (end-game), priorité des pairs
   (BEP 40), identifiants DHT sécurisés (BEP 42), perçage de NAT (BEP 55).
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
+
+## Nouveautés de la 0.4.2
+
+- Envoi sur storage.to à la demande : menu ⋯ d'un téléchargement terminé, avec durée de vie du lien,
+  effacement après N téléchargements et, en option, effacement des fichiers du PC.
+- Nouveau réglage storage.to : effacement des fichiers en ligne après N téléchargements.
 
 ## Correctifs de la 0.4.1
 
