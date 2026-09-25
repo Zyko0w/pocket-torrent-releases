@@ -75,9 +75,6 @@ d'un téléchargement), import des réglages de la version web.
 
 Configuration requise : Windows 10 ou 11, 64 bits.
 
-Pocket Torrent remplace automatiquement **Torrent Cloud** (versions 0.1.1 et antérieures), en conservant
-réglages, liste de téléchargements et torrents en cours.
-
 ## Mises à jour
 
 Les nouvelles versions sont proposées au démarrage et ne s'installent qu'après accord. Chaque mise à jour est
