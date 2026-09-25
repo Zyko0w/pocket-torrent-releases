@@ -16,17 +16,19 @@
 **Téléchargement**
 - Liens magnet, fichiers `.torrent` (y compris par glisser-déposer) et liens directs HTTP(S) avec reprise.
 - Sélection et ordre de priorité des fichiers, avant et pendant le téléchargement.
-- Lecture des vidéos en cours de téléchargement (VLC, mpv…).
 - File d'attente à trois niveaux de priorité, qui déterminent l'ordre de démarrage et la part de bande passante.
 - Limites de vitesse globales et par téléchargement, planificateur horaire.
-- Catégories avec dossier dédié.
-- Flux RSS de séries : ajout automatique des nouveaux épisodes, avec filtres (RSS, Atom, Jackett, Prowlarr).
+- Catégories avec dossier dédié ; dossier des téléchargements en cours en option (déplacement à la fin).
+- Flux RSS de séries : ajout automatique des nouveaux épisodes, avec filtres simples ou expressions régulières
+  (RSS, Atom, Jackett, Prowlarr).
+- Trackers privés : trackers de secours utilisés dans l'ordre du `.torrent`.
 - Liens magnet copiés proposés à l'ajout au retour sur la fenêtre.
 - Partage avec ratio et durée maximum.
 
 **Confidentialité**
 - Liaison stricte à l'interface du VPN, avec arrêt immédiat en cas de coupure et reprise automatique.
 - Tunnel WireGuard intégré (import du fichier `.conf` du fournisseur), limité aux téléchargements.
+- Proxy SOCKS5 : tout le trafic des téléchargements passe par lui, sans fuite.
 - Redirection de port ProtonVPN (NAT-PMP).
 - Chiffrement des échanges entre pairs (MSE), DNS chiffré (DNS over HTTPS).
 - Mode discret et mode confidentialité renforcée.
@@ -44,8 +46,22 @@
 **Moteur**
 - Basé sur [librqbit](https://github.com/ikatson/rqbit) (Rust), étendu pour Pocket Torrent.
 - DHT, PEX, trackers HTTP/UDP, µTP, sources web (BEP 19), extension Fast (BEP 6), partage partiel (BEP 21),
-  sélection des pièces les plus rares, réciprocité d'envoi.
+  sélection des pièces les plus rares, réciprocité d'envoi, fin de partie (end-game), priorité des pairs
+  (BEP 40), identifiants DHT sécurisés (BEP 42), perçage de NAT (BEP 55).
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
+
+## Nouveautés de la 0.4.0
+
+| Ajouté | Retiré |
+| --- | --- |
+| Proxy SOCKS5 | Lecture pendant le téléchargement (bouton « Lire ») |
+| Dossier des téléchargements en cours | |
+| Filtres RSS en expressions régulières | |
+| Perçage de NAT (BEP 55), fin de partie, BEP 40 et 42 | |
+| Listes des dépendances publiées (SBOM) | |
+
+Sécurité : audit et test d'intrusion complets ; une dizaine de failles corrigées, dont deux sérieuses
+(un paquet réseau pouvait arrêter la DHT ; un fichier de réglages abîmé désactivait le VPN obligatoire).
 
 ## Correctifs de la 0.2.2
 
@@ -85,6 +101,7 @@ signée ; l'application vérifie la signature avant installation et refuse tout 
 | `PocketTorrent_<version>_x64-setup.exe` | Installateur |
 | `PocketTorrent_<version>_x64-setup.exe.sig` | Signature de l'installateur (mises à jour automatiques) |
 | `latest.json` | Description de la dernière version (mises à jour automatiques) |
+| `sbom-*.cdx.json` | Liste des composants embarqués (CycloneDX) : application, tunnel, interface |
 
 ## Connexions réseau
 
@@ -95,6 +112,7 @@ Pocket Torrent n'établit que les connexions suivantes :
 - GitHub, pour la recherche de mises à jour (désactivable) ;
 - routeur, pour l'ouverture du port (UPnP, NAT-PMP ; désactivée avec le VPN et en mode renforcé) ;
 - serveur VPN, pour la redirection de port (si activée) ;
+- proxy SOCKS5 choisi dans les réglages (s'il est activé, tout le trafic des téléchargements passe par lui) ;
 - storage.to, pour les téléchargements marqués « Envoyer sur storage.to » ;
 - serveurs des flux RSS configurés (par le même chemin réseau que les téléchargements).
 
