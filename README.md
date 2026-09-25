@@ -58,7 +58,6 @@
 | Dossier des téléchargements en cours | |
 | Filtres RSS en expressions régulières | |
 | Perçage de NAT (BEP 55), fin de partie, BEP 40 et 42 | |
-| Listes des dépendances publiées (SBOM) | |
 
 Sécurité : audit et test d'intrusion complets ; une dizaine de failles corrigées, dont deux sérieuses
 (un paquet réseau pouvait arrêter la DHT ; un fichier de réglages abîmé désactivait le VPN obligatoire).
@@ -101,7 +100,6 @@ signée ; l'application vérifie la signature avant installation et refuse tout 
 | `PocketTorrent_<version>_x64-setup.exe` | Installateur |
 | `PocketTorrent_<version>_x64-setup.exe.sig` | Signature de l'installateur (mises à jour automatiques) |
 | `latest.json` | Description de la dernière version (mises à jour automatiques) |
-| `sbom-*.cdx.json` | Liste des composants embarqués (CycloneDX) : application, tunnel, interface |
 
 ## Connexions réseau
 
