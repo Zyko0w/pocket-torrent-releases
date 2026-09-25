@@ -50,6 +50,14 @@
   (BEP 40), identifiants DHT sécurisés (BEP 42), perçage de NAT (BEP 55).
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
 
+## Correctifs de la 0.4.1
+
+- Notifications : elles ne s'affichaient pas (application non déclarée à Windows). Le bouton de test
+  indique désormais pourquoi une notification ne peut pas s'afficher.
+- Double-clic sur un fichier `.torrent` : association rétablie, fenêtre affichée au premier plan,
+  fichier transmis même pendant le démarrage.
+- Analyse Microsoft Defender : résultat affiché sous chaque téléchargement terminé, bouton de test.
+
 ## Nouveautés de la 0.4.0
 
 | Ajouté | Retiré |
