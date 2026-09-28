@@ -39,8 +39,9 @@
 - Mode jeu : ralentissement ou pause automatique au lancement d'un jeu.
 - Arrêt du PC à la fin des téléchargements.
 - Démarrage avec Windows, association des liens magnet et `.torrent`, notifications.
-- Envoi sur storage.to avec lien de partage (optionnel, sans compte) : automatique une fois terminé, ou à la
-  demande depuis un téléchargement terminé ; durée de vie et effacement après N téléchargements au choix.
+- Mise en ligne avec lien de partage (optionnel, sans compte) sur storage.to, GoFile, VikingFile ou son propre
+  hébergeur (import des fichiers `.sxcu` de ShareX) : automatique une fois terminé, ou à la demande depuis un
+  téléchargement terminé ; sur storage.to, durée de vie et effacement après N téléchargements au choix.
 - Graphique du débit en direct (global et par téléchargement), statistiques, état des trackers.
 - Export et import de la liste de téléchargements.
 
@@ -50,6 +51,18 @@
   sélection des pièces les plus rares, réciprocité d'envoi, fin de partie (end-game), priorité des pairs
   (BEP 40), identifiants DHT sécurisés (BEP 42), perçage de NAT (BEP 55).
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
+
+## Nouveautés de la 0.5.0
+
+- Mise en ligne sur d'autres services que storage.to : GoFile (un dossier et un seul lien par
+  téléchargement) et VikingFile (un lien par fichier), avec compte facultatif. Le service se choisit
+  dans Réglages › Envoi en ligne, ou à chaque envoi depuis le menu ⋯.
+- Hébergeurs personnalisés : n'importe quel service qui accepte un envoi par formulaire ou en PUT et
+  renvoie un lien, à configurer à la main, depuis un modèle (catbox.moe, litterbox, 0x0.st) ou en
+  important un fichier `.sxcu` de ShareX. Les clés d'API sont rangées dans le Gestionnaire
+  d'identification de Windows.
+- Zone d'ajout : « Enregistrer sur ce PC » et « Mettre en ligne une fois fini » remplacent
+  « Garder sur le PC » et « Envoyer sur storage.to ».
 
 ## Nouveautés de la 0.4.3
 
