@@ -52,6 +52,12 @@
   (BEP 40), identifiants DHT sécurisés (BEP 42), perçage de NAT (BEP 55).
 - Ouverture automatique du port sur le routeur (UPnP, NAT-PMP).
 
+## Correctifs de la 0.5.1
+
+- Vitesse au démarrage d'un torrent : elle n'alterne plus entre ~39 Ko/s et 0 quand les premières données
+  arrivent au compte-gouttes. Mesurée sur une seconde à débit normal, sur quelques secondes quand il est
+  très faible ; le temps restant est plus stable aussi.
+
 ## Nouveautés de la 0.5.0
 
 - Mise en ligne sur d'autres services que storage.to : GoFile (un dossier et un seul lien par
